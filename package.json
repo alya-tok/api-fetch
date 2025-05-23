@@ -1,6 +1,6 @@
 {
    "name": "@alyachan/api",
-   "version": "0.0.1",
+   "version": "0.0.2",
    "description": "Fetcher for AlyaChan API",
    "main": "index.js",
    "author": "alyachan",
@@ -13,8 +13,12 @@
    },
    "repository": {
       "type": "git",
-      "url": "git@github-alya:alya-tok/api-fetch.git"
+      "url": "git+https://github.com/alya-tok/api-fetcher.git"
    },
+   "bugs": {
+      "url": "https://github.com/alya-tok/api-fetcher/issues"
+   },
+   "homepage": "https://github.com/alya-tok/api-fetcher#readme",
    "keywords": [
       "fetcher",
       "api"
