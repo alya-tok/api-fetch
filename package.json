@@ -13,12 +13,12 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/alya-tok/api-fetcher.git"
+      "url": "git+https://github.com/alya-tok/api-fetch.git"
    },
    "bugs": {
-      "url": "https://github.com/alya-tok/api-fetcher/issues"
+      "url": "https://github.com/alya-tok/api-fetch/issues"
    },
-   "homepage": "https://github.com/alya-tok/api-fetcher#readme",
+   "homepage": "https://github.com/alya-tok/api-fetch#readme",
    "keywords": [
       "fetcher",
       "api"
