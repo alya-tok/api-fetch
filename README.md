@@ -1,5 +1,8 @@
 ## Official Fetcher for AlyaChan API
 
+[![npm version](https://img.shields.io/npm/v/@alyachan/api)](https://www.npmjs.com/package/@alyachan/api)
+[![npm downloads](https://img.shields.io/npm/dm/@alyachan/api)](https://www.npmjs.com/package/@alyachan/api)
+
 > Module to fetch api data very easily with efficient and readable code
 
 ## How to use ??
