@@ -25,7 +25,7 @@ API_KEY = 'yourkey'
 
 ## Example
 ```Javascript
-const Api = new (require('@alyachan/api'))
+const Api = require('@alyachan/api')
 const json = await Api.get('api/tiktok', {
    url: 'https://vm.tiktok.com/ZSR7c5G6y/'
 })
