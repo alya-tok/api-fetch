@@ -17,8 +17,7 @@ class API {
       this.URI = process.env.API_ENDPOINT
       this.apiKey = process.env.API_KEY
       this.create = axios.create({
-         baseURL: this.URI,
-         timeout: 60000,
+         baseURL: this.URI
       })
    }
 
