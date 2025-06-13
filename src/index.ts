@@ -17,7 +17,8 @@ class API {
       this.URI = process.env.API_ENDPOINT
       this.apiKey = process.env.API_KEY
       this.create = axios.create({
-         baseURL: this.URI
+         baseURL: this.URI,
+         timeout: 60000,
       })
    }
 
@@ -78,4 +79,4 @@ class API {
    }
 }
 
-export = new API()
+export default new API()
