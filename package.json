@@ -1,6 +1,6 @@
 {
    "name": "@alyachan/api",
-   "version": "0.0.12",
+   "version": "0.0.13",
    "description": "Fetcher for AlyaChan API",
    "main": "lib/index.js",
    "types": "lib/index.d.ts",
