@@ -48,7 +48,11 @@ class API {
          })
          return res.data
       } catch (error: any) {
-         return { status: 400, error: error.message }
+         return {
+            creator: 'AlyaChan API - @alyachan.dev',
+            status: false,
+            msg: error.message
+         }
       }
    }
 
@@ -74,7 +78,11 @@ class API {
          )
          return res.data
       } catch (error: any) {
-         return { status: 400, error: error.message }
+         return {
+            creator: 'AlyaChan API - @alyachan.dev',
+            status: false,
+            msg: error.message
+         }
       }
    }
 }
