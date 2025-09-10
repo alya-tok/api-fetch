@@ -48,10 +48,18 @@ class API {
          })
          return res.data
       } catch (error: any) {
-         return {
-            creator: 'AlyaChan API - @alyachan.dev',
-            status: false,
-            msg: error.message
+         if (error.response) {
+            return error.response.data
+         } else if (error.request) {
+            return {
+               status: false,
+               msg: 'No response from server'
+            }
+         } else {
+            return {
+               status: false,
+               msg: error.message || 'Request failed'
+            }
          }
       }
    }
@@ -78,10 +86,18 @@ class API {
          )
          return res.data
       } catch (error: any) {
-         return {
-            creator: 'AlyaChan API - @alyachan.dev',
-            status: false,
-            msg: error.message
+         if (error.response) {
+            return error.response.data
+         } else if (error.request) {
+            return {
+               status: false,
+               msg: 'No response from server'
+            }
+         } else {
+            return {
+               status: false,
+               msg: error.message || 'Request failed'
+            }
          }
       }
    }
