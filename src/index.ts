@@ -103,4 +103,4 @@ class API {
    }
 }
 
-export default new API()
+export default (uri?: string, apiKey?: string) => new API(uri, apiKey)
