@@ -13,9 +13,9 @@ class API {
    private apiKey: string | undefined
    private create: AxiosInstance
 
-   constructor() {
-      this.URI = process.env.API_ENDPOINT
-      this.apiKey = process.env.API_KEY
+   constructor(uri?: string, apiKey?: string) {
+      this.URI = uri || process.env.API_ENDPOINT || ''
+      this.apiKey = apiKey || process.env.API_KEY || ''
       this.create = axios.create({
          baseURL: this.URI,
          timeout: 60000,
