@@ -13,12 +13,12 @@ class API {
    private apiKey: string | undefined
    private create: AxiosInstance
 
-   constructor(uri?: string, apiKey?: string) {
+   constructor(uri?: string, apiKey?: string, timeout?: number) {
       this.URI = uri || process.env.API_ENDPOINT || ''
       this.apiKey = apiKey || process.env.API_KEY || ''
       this.create = axios.create({
          baseURL: this.URI,
-         timeout: 60000,
+         timeout: timeout || parseInt(process.env.API_TIMEOUT || '0') || 60000,
       })
    }
 
@@ -37,13 +37,14 @@ class API {
       options: AxiosRequestConfig = {}
    ): Promise<any> {
       try {
-         const params = new URLSearchParams({
-            ...query,
-            ...(apikey ? { apikey } : {}),
-         } as Record<string, string>)
-
+         const params = new URLSearchParams(query as Record<string, string>)
+         const headers = {
+            ...options.headers,
+            ...(apikey ? { 'Authorization': `Bearer ${apikey}` } : {})
+         }
          const res: AxiosResponse = await this.create.get(path, {
             params,
+            headers,
             ...options,
          })
          return res.data
@@ -79,10 +80,17 @@ class API {
       options: AxiosRequestConfig = {}
    ): Promise<any> {
       try {
+         const headers = {
+            ...options.headers,
+            ...(apikey ? { 'Authorization': `Bearer ${apikey}` } : {})
+         }
          const res: AxiosResponse = await this.create.post(
             path,
-            { ...data, ...(apikey ? { apikey } : {}) },
-            { ...options }
+            data,
+            {
+               headers,
+               ...options
+            }
          )
          return res.data
       } catch (error: any) {
