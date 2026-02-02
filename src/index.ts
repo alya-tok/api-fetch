@@ -111,4 +111,4 @@ class API {
    }
 }
 
-export default (uri?: string, apiKey?: string) => new API(uri, apiKey)
+export default (uri?: string, apiKey?: string, timeout?: number) => new API(uri, apiKey, timeout)
